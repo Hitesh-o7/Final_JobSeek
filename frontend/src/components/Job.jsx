@@ -4,6 +4,7 @@ import { Bookmark } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { useNavigate } from "react-router-dom";
+import "./style3.css";
 
 const Job = ({ job }) => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Job = ({ job }) => {
   };
 
   return (
-    <div className="p-5 bg-[#e3edf7] rounded-lg shadow-md border border-gray-200 hover:shadow-lg transform transition-transform hover:scale-105">
+    <div className="my-card">
       {/* Job Header */}
       <div className="flex items-center justify-between mb-3">
         <p className="text-sm text-gray-500">

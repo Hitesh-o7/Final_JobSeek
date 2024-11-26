@@ -1,8 +1,8 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-// You can use date-fns or moment.js for handling dates dynamically
 import { formatDistanceToNow } from 'date-fns'; // Example with date-fns
+import "./style2.css";
 
 const LatestJobCards = ({ job }) => {
   const navigate = useNavigate();
@@ -13,11 +13,11 @@ const LatestJobCards = ({ job }) => {
   return (
     <div
       onClick={() => navigate(`/description/${job._id}`)}
-      className="p-5 rounded-lg shadow-lg bg-white border border-gray-200 cursor-pointer transition-all transform hover:scale-105 hover:shadow-xl"
+      className="job-card p-5 rounded-lg bg-white border border-gray-200 cursor-pointer transition-all"
     >
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="font-medium text-xl text-[#1f2937]">{job?.company?.name}</h1>
+          <h1 className="font-medium text-xl text-[#1f2937]">{job?.company?.name || "Unknown Company"}</h1>
           <p className="text-sm text-gray-500">India</p>
         </div>
         <span className="text-sm text-gray-400">{`Posted ${postedDate} ago`}</span>

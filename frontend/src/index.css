@@ -70,7 +70,11 @@
     * {
       @apply border-border;
     }
+
+    html{
+        overscroll-behavior: none;
+    }
     body {
-      @apply bg-background text-foreground;
+        background: linear-gradient(to right, #ebf8ff, #dbeafe, #bfdbfe); 
     }
   }

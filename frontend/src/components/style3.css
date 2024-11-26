@@ -1,0 +1,18 @@
+.my-card {
+    padding: 1.25rem; /* 5 * 0.25rem */
+    background-color: rgba(240, 240, 240, 0.5);
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow:
+      -10px -10px 30px rgba(255, 255, 255, 1),
+      10px 10px 30px rgba(174, 174, 192, 1);
+    border: 1px solid #e1e1e1; /* border-gray-200 */
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+  }
+
+  .my-card:hover {
+    box-shadow:
+      inset -5px -5px 15px rgba(255, 255, 255, 0.9),
+      inset 5px 5px 15px rgba(174, 174, 192, 0.8);
+
+  }

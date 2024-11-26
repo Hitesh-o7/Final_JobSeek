@@ -23,14 +23,14 @@ const Jobs = () => {
   }, [allJobs, searchedQuery]);
 
   return (
-    <div className="bg-[#e3edf7] min-h-screen">
+    <div className="bg-[#e3edf7] mt-[-20px] min-h-screen">
       <Navbar />
-      <div className="max-w-7xl mx-auto mt-5">
-        <div className="flex gap-5 flex-col lg:flex-row">
-          <div className="w-full lg:w-1/5">
+      <div className="max-w-7xl  mx-auto mt-5">
+        <div className="flex gap-5  flex-col lg:flex-row">
+          <div className="w-full mt-[100px] lg:w-1/5">
             <FilterCard />
           </div>
-          <div className="flex-1 h-[88vh] overflow-y-auto pb-5">
+          <div className="flex-1 h-[88vh] mt-[100px] overflow-y-auto pb-5">
             {filterJobs.length <= 0 ? (
               <span className="text-center">Job not found</span>
             ) : (

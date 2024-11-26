@@ -32,19 +32,19 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#e3edf7] shadow-sm border-b">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
+    <div className="fixed w-full backdrop-blur-md bg-white/0 shadow-sm border-b border-gray-200 z-50 top-0 left-0 right-0">
+      <div className="flex items-center justify-between mx-auto max-w-7xl h-20 px-6">
         {/* Logo Section */}
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">
-            Job<span className="text-[#6C63FF]">Portal</span>
+          <h1 className="text-3xl font-extrabold text-gray-800">
+            Job<span className="text-[#6C63FF]">Seek</span>
           </h1>
         </div>
 
         {/* Navigation and Authentication */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-10">
           {/* Navigation Links */}
-          <ul className="flex font-medium items-center gap-5 text-gray-700">
+          <ul className="flex font-semibold items-center gap-8 text-gray-700">
             {user && user.role === "recruiter" ? (
               <>
                 <li>
@@ -96,17 +96,17 @@ const Navbar = () => {
 
           {/* Authentication Section */}
           {!user ? (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-4">
               <Link to="/login">
                 <Button
                   variant="outline"
-                  className="text-[#6C63FF] border-[#6C63FF] hover:bg-blue-50 hover:text-blue-700"
+                  className="text-[#6C63FF] border-[#6C63FF] hover:bg-blue-50 hover:text-blue-700 font-semibold px-6 py-2"
                 >
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-[#6C63FF] hover:bg-blue-800 text-white">
+                <Button className="bg-[#6C63FF] hover:bg-blue-800 text-white font-semibold px-6 py-2">
                   Signup
                 </Button>
               </Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
           ) : (
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar className="h-10 w-10 rounded-full cursor-pointer">
+                <Avatar className="h-12 w-12 rounded-full cursor-pointer">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
                     alt="@user"

@@ -1,0 +1,11 @@
+/* Add this to your CSS file for the box shadow */
+.job-card {
+    box-shadow: -10px -10px 30px rgba(255, 255, 255, 1), 10px 10px 30px rgba(174, 174, 192, 1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for the job card */
+  .job-card:hover {
+    box-shadow: inset -10px -10px 25px 0 rgba(255, 255, 255, 0.9),
+    inset 10px 10px 25px 0 rgba(174, 174, 192, 0.8);
+  }

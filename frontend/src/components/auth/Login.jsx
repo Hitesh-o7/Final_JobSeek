@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading, setUser } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+import "./signup.css";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -56,15 +57,13 @@ const Login = () => {
   }, [user, navigate]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-r from-blue-50 via-blue-100 to-blue-200 flex items-center justify-center">
       <Navbar />
-      <div className="flex items-center justify-center max-w-7xl mx-auto">
-        <form
-          onSubmit={submitHandler}
-          className="w-full max-w-md bg-white shadow-md rounded-lg p-6 my-10 border border-gray-200"
-        >
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">Login</h1>
+      <div className="w-full max-w-sm bg-white shadow-lg rounded-xl p-8 my-10 border border-gray-300">
+        <form onSubmit={submitHandler} className="space-y-6">
+          <h1 className="text-3xl font-semibold text-center text-gray-800">Login</h1>
 
+          {/* Email Input */}
           <div className="mb-4">
             <Label htmlFor="email">Email</Label>
             <Input
@@ -74,10 +73,11 @@ const Login = () => {
               value={input.email}
               name="email"
               onChange={changeEventHandler}
-              className="mt-2"
+              className="mt-2 px-4 py-3 rounded-md shadow-sm border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
             />
           </div>
 
+          {/* Password Input */}
           <div className="mb-4">
             <Label htmlFor="password">Password</Label>
             <Input
@@ -87,57 +87,59 @@ const Login = () => {
               value={input.password}
               name="password"
               onChange={changeEventHandler}
-              className="mt-2"
+              className="mt-2 px-4 py-3 rounded-md shadow-sm border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
             />
           </div>
 
+          {/* Role Selection */}
           <div className="mb-6">
-            <Label>Role</Label>
-            <RadioGroup className="flex items-center gap-6 mt-2">
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  id="student"
-                  name="role"
-                  value="student"
-                  checked={input.role === "student"}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="student">Student</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Input
-                  type="radio"
-                  id="recruiter"
-                  name="role"
-                  value="recruiter"
-                  checked={input.role === "recruiter"}
-                  onChange={changeEventHandler}
-                  className="cursor-pointer"
-                />
-                <Label htmlFor="recruiter">Recruiter</Label>
-              </div>
-            </RadioGroup>
-          </div>
+                        <Label>Role</Label>
+                        <div className="radio-inputs mt-4">
+                            <label className="radio">
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="student"
+                                    checked={input.role === 'student'}
+                                    onChange={changeEventHandler}
+                                />
+                                <span className="name">Student</span>
+                            </label>
+                            <label className="radio">
+                                <input
+                                    type="radio"
+                                    name="role"
+                                    value="recruiter"
+                                    checked={input.role === 'recruiter'}
+                                    onChange={changeEventHandler}
+                                />
+                                <span className="name">Recruiter</span>
+                            </label>
+                        </div>
+                    </div>
 
+          {/* Submit Button */}
           {loading ? (
-            <Button disabled className="w-full bg-blue-500 text-white py-3 rounded-md flex items-center justify-center">
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Button
+              disabled
+              className="w-full bg-blue-500 text-white py-3 rounded-md flex items-center justify-center space-x-2"
+            >
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
               Logging in...
             </Button>
           ) : (
             <Button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md transition-colors duration-300"
             >
               Login
             </Button>
           )}
 
+          {/* Sign-up Link */}
           <p className="text-sm text-gray-500 text-center mt-4">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-blue-600">
+            <Link to="/signup" className="text-blue-600 hover:underline">
               Sign up
             </Link>
           </p>

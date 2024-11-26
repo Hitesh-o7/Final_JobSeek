@@ -58,7 +58,7 @@ const JobDescription = () => {
   }, [jobId, dispatch, user?._id]);
 
   return (
-    <div className="bg-[#e3edf7] min-h-screen py-10">
+    <div className="bg-[#e3edf7] min-h-screen pt-[100px] py-10">
       <div className="max-w-7xl mx-auto p-10">
         {/* Job Header */}
         <div className="flex items-center justify-between">
