@@ -36,8 +36,11 @@ const Navbar = () => {
       <div className="flex items-center justify-between mx-auto max-w-7xl h-20 px-6">
         {/* Logo Section */}
         <div>
-          <h1 className="text-3xl font-extrabold text-gray-800">
+          <h1 className="text-3xl font-extrabold text-gray-800" >
+            <Link to="/">
+            
             Job<span className="text-[#6C63FF]">Seek</span>
+            </Link>
           </h1>
         </div>
 
