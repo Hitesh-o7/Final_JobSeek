@@ -1,6 +1,7 @@
 import React from "react";
 import LatestJobCards from "./LatestJobCards";
 import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const LatestJobs = () => {
   const { allJobs } = useSelector((store) => store.job);
@@ -29,7 +30,9 @@ const LatestJobs = () => {
       </div>
       <div className="flex justify-center mt-8">
         <button className="bg-[#6C63FF] text-white font-semibold py-2 px-4 rounded-lg shadow-lg hover:bg-[#5b2fa6] transition duration-200">
+          <Link to="/Jobs">
           View All Jobs
+          </Link>
         </button>
       </div>
     </div>
