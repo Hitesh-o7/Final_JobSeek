@@ -23,6 +23,8 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.6",
     "framer-motion": "^11.3.7",
+    "jspdf": "^2.5.2",
+    "jspdf-autotable": "^3.8.4",
     "lucide-react": "^0.395.0",
     "next-themes": "^0.3.0",
     "react": "^18.2.0",

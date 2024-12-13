@@ -29,7 +29,7 @@ export const applyJob = async (req, res) => {
                 success: false
             })
         }
-        // create a new application
+        // create a new application for user
         const newApplication = await Application.create({
             job:jobId,
             applicant:userId,
@@ -45,6 +45,7 @@ export const applyJob = async (req, res) => {
         console.log(error);
     }
 };
+
 export const getAppliedJobs = async (req,res) => {
     try {
         const userId = req.id;

@@ -121,7 +121,7 @@ const Navbar = () => {
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
                     alt="@user"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full  rounded-full object-cover"
                   />
                   <AvatarFallback className="h-full w-full rounded-full">
                     {user?.fullname?.charAt(0)}
@@ -134,7 +134,7 @@ const Navbar = () => {
                     <AvatarImage
                       src={user?.profile?.profilePhoto}
                       alt="@user"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover rounded-full"
                     />
                   </Avatar>
                   <div>
